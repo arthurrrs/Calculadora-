@@ -1,0 +1,113 @@
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
+    background-image: url(./calculadora.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nome{
+    display: flex;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35px;
+
+}
+
+/* Estilo do container principal da calculadora */
+.calculator {
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+}
+
+/* Estilo do display/visor da calculadora */
+.display {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 1px;
+    background-color: #f1f3f5;
+    border-radius: 12px;
+    text-align: right;
+    font-size: 2.25rem;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #212529;
+}
+
+/* Container dos botões */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Estilo base para todos os botões */
+button {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #dee2e6;
+    color: #212529;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Botões de operação */
+button:nth-child(4n),
+button:nth-child(19) {
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+/* Botão de limpar (C) */
+button#clear {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+/* Botão de igual (=) */
+button#equals {
+    background-color: #198754;
+    color: #ffffff;
+    grid-column: span 4;
+}
+
+/* Efeito quando o botão é clicado */
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 400px) {
+    .calculator {
+        width: 90%;
+        padding: 16px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 1rem;
+    }
+}
